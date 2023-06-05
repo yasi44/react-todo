@@ -16,7 +16,7 @@ const todoList = [
 
 function App() {
   const listItems = todoList.map(function(item){
-    return <li>{item.id} {item.title}</li>;
+    return <li key={item.id}> {item.title}</li>;
   });
   return (
     <div style={{ textAlign: 'left' }}>
