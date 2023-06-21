@@ -1,6 +1,6 @@
 import React from "react";
 
-const todoList = [
+let todoList = [
     {
       id:1,
       title:"Complete assignment"},
@@ -14,7 +14,7 @@ const todoList = [
     }
   ]; 
 
-let TodoList = () => {
+const TodoList = () => {
     const listItems = todoList.map(function(item){
         return <li key={item.id}> {item.title}</li>;
       });
