@@ -1,6 +1,11 @@
 import React from "react";
+import TodoListItem from "./TodoListItem";
 
-let todoList = [
+
+
+
+const TodoList = () => {
+  const todoList = [
     {
       id:1,
       title:"Complete assignment"},
@@ -13,16 +18,18 @@ let todoList = [
       title:"Call mom"
     }
   ]; 
+  return(
+    // const listItems = todoList.map(function(item){
+    //     return <li key={item.id}> {item.title}</li>;
+    //   });
 
-const TodoList = () => {
-    const listItems = todoList.map(function(item){
-        return <li key={item.id}> {item.title}</li>;
-      });
-    return(
-      <ul>
-        {listItems}
-      </ul>
-    );
-}
+    <ul>
+      {todoList.map((item) => ( 
+        <TodoListItem key={item.id} todo={item.title} />))     
+          }
+    </ul>
+    
+  );
+        }
 
 export default TodoList;

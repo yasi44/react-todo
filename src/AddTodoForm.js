@@ -1,12 +1,21 @@
 import React from "react";
 
-const AddTodoForm = () => {
+const AddTodoForm = (props) => {
+
+
+    const handleAddTodo = (event) => {
+        event.preventDefault(event);
+        const todoTitle = event.target.title.value;
+        props.onAddTodo (todoTitle);
+
+    }
+
     return(
-        <form>
+        <form onSubmit={handleAddTodo}>
             <label htmlFor="todoTitle" id="todoTitle">
                 Title
             </label>
-            <input id="todoTitle"/>
+            <input id="todoTitle" name="title"/>
             <button type="submit">Add</button>
         </form>
     );
